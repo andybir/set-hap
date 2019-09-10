@@ -34,7 +34,8 @@ on iPhone
 ## API Data Sample
 
 https://res.cloudinary.com/dfhdie1sf/image/upload/v1568140080/SetHap/newsapi-json-snip.jpg
-https://res.cloudinary.com/dfhdie1sf/image/upload/v1568139329/SetHap/setlist.fm-json-snip.jpg
+https://res.cloudinary.com/dfhdie1sf/image/upload/v1568145283/SetHap/setlist-json-snip-1.jpg
+https://res.cloudinary.com/dfhdie1sf/image/upload/v1568145284/SetHap/setlist-json-snip-2.jpg
 
 ### MVP/PostMVP - 5min
 
