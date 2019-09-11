@@ -52,10 +52,10 @@ const getSetlist = async (band, date) => {
     
     let bandDiv = document.createElement('div')
     bandDiv.innerHTML = `
-    <p>Date: ${eventDate}</p>
-    <p>Band: ${bandName}</p>
-    <p>Venue: ${venueName}, ${setlistCity}, ${setlistState}, ${setlistCountry}</p>
-    <p>Set List: ${fullSetList}</p>
+    <h2>${bandName}</h2>
+    <p>${eventDate}</p>
+    <p>${venueName}, ${setlistCity}, ${setlistState}, ${setlistCountry}</p>
+    <p class="set-list">Set List: ${fullSetList}</p>
     
     `
     
@@ -98,9 +98,9 @@ let pubDate = newsResponse.data.response.docs[0].pub_date
 
 let newsDiv = document.createElement('div')
     newsDiv.innerHTML = `
-    <p>${newsHeadline}</p>
+    <h2 class="headline">${newsHeadline}</h2>
     <p>${pubDate}</p>
-    <p>${newsPara}</p>
+    <p class="para">${newsPara}</p>
     <p><a href=${newsUrl}>Read more...</a></p>`
     
     appendNews.append(newsDiv)

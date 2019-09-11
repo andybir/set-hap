@@ -66,7 +66,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | allow search by mbid | H | 4hrs| 1.5hrs | 1.5hrs |
 | push mbid into setlist api | H | 4hrs| 1.5hrs | 1.5hrs |
 | connect setlist date to article date | H | 4hrs | TI | AT |
-| build band input, submit button | H | 4hrs| TI | AT |
+| build band input, submit button | H | 2hrs| 2hrs | 2hrs |
 | styling | M | 4hrs | TI | AT|
 | add button to generate a random setlist/article | L | 4hrs | TI | AT |
 | query select required news article data points | L | 4hrs| TI | AT |

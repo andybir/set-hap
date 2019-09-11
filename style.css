@@ -1,0 +1,74 @@
+* {
+    font-family: 'Mina', sans-serif;
+
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    justify-content: center
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    order: 1;
+    
+}
+
+h1 {
+    margin-left: 10px;
+    
+    /* justify-content: center; */
+}
+
+form {
+    /* justify-content: center; */
+    order: 2;
+}
+
+.results {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 10px;
+    order: 3;
+}
+
+.band-info {
+    padding: 10px;
+    width: 50%;
+}
+
+.news-info {
+    padding: 10px;
+    width: 50%;
+}
+
+div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.set-list {
+    
+}
+
+.song {
+    margin-top: 1px;
+    margin-bottom: 1px; 
+}
+
+.headline {
+
+}
+
+.para {
+
+}
