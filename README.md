@@ -14,7 +14,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Sep 10th| Project Description Wireframes / Priority Matrix / Functional Components / Core Application Structure (HTML, CSS, etc.) Pseudocode | Complete
 |Sep 11th|  all data points selected, rendered to DOM | Incomplete
 |Sep 12th| Initial Clickable Model / styling / media queries | Incomplete
-|Sep 13th| MVP | Incomplete
+|Sep 13th| pMVP | Incomplete
 |Sep 14th|  | Incomplete
 |Sep 15th|  | Incomplete
 |Sep 16th| Present | Incomplete
@@ -63,6 +63,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | render article data points to DOM | H | 4hrs| 1hr | 1hr |
 | query select required setlist data points | H | 4hrs| 1.5hrs | 1.5hrs |
 | render setlist data to DOM | H | 4hrs| 1.5hrs | 1.5hrs |
+| allow search by mbid | H | 4hrs| 1.5hrs | 1.5hrs |
 | connect setlist date to article date | H | 4hrs | TI | AT |
 | build band input, submit button | H | 4hrs| TI | AT |
 | styling | M | 4hrs | TI | AT|

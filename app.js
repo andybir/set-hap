@@ -7,14 +7,24 @@ console.log(bandInput)
 const setlistUrl = 'https://api.setlist.fm/rest/1.0/setlist/'
 const setlistKey = 'dDDQqRHrKqVuXBxZYXZ_DX3fDgaQbPdS6LX8'
 
-const newsUrl = 'https://newsapi.org/v2/top-headlines?country=us'
-const newsKey = 'bb7273a136e2478cbdb97f6b01fb4d51'
+const newsUrl = 'https://api.nytimes.com/svc/archive/v1/1978/3.json?api-Key='
+const newsKey = 'A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn'
+
+const getBand = async (band) => {
+    // band.preventDefault()
+    // appendBand.innerHTML = ''
+let mbidResponse = await axios.get(`http://musicbrainz.org/ws/2/artist/?query=artist:${band}%20AND%20type:group%20AND%20country:US`)
+console.log(mbidResponse.data)
+
+let mbid = mbidResponse.data.artists[0].id
+console.log(mbid)
+// take result of getBand, pass through getSetlist
 
 // const getSetlist = async (ev) => {
 //     // ev.preventDefault()
 //     appendBand.innerHTML = ''
 
-    // let setResponse = await axios.get('https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/setlist/3bdae43c', {
+    // let setResponse = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/artist/${mbid}/setlists?p=1`, {
     //     headers: {
     //         'x-api-key' : 'dDDQqRHrKqVuXBxZYXZ_DX3fDgaQbPdS6LX8'
     //     }
@@ -47,6 +57,7 @@ const newsKey = 'bb7273a136e2478cbdb97f6b01fb4d51'
     
 //     appendBand.append(bandDiv)
 // }
+}
 
 const getNews = async (ev) => {
     // ev.preventDefault()
@@ -72,13 +83,9 @@ let newsDiv = document.createElement('div')
 
 }
 
-const getBand = async (ev) => {
-    // ev.preventDefault()
-    // appendBand.innerHTML = ''
-let mbidResponse = await axios.get(`http://musicbrainz.org/ws/2/artist/?query=artist:${bandInput}%20AND%20type:group%20AND%20country:US`)
-console.log(mbidResponse.data)
-}
+const form = document.querySelector('form')
+form.addEventListener('submit', getBand)
 
-getBand()
+getBand('the ramones')
 // getSetlist()
 getNews()
