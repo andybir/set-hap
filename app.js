@@ -1,8 +1,7 @@
 const appendBand = document.querySelector('.band-info')
 const appendNews = document.querySelector('.news-info')
-const bandInput = document.querySelector('.band-input').value
-bandInput.value = ''
-console.log(bandInput)
+
+
 
 const setlistUrl = 'https://api.setlist.fm/rest/1.0/setlist/'
 const setlistKey = 'dDDQqRHrKqVuXBxZYXZ_DX3fDgaQbPdS6LX8'
@@ -11,17 +10,22 @@ const newsUrl = 'https://api.nytimes.com/svc/archive/v1/1978/3.json?api-Key='
 const newsKey = 'A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn'
 
 const getBand = async (band) => {
-    // band.preventDefault()
-    // appendBand.innerHTML = ''
-let mbidResponse = await axios.get(`http://musicbrainz.org/ws/2/artist/?query=artist:${band}%20AND%20type:group%20AND%20country:US`)
-console.log(mbidResponse.data)
+    band.preventDefault()
+    appendBand.innerHTML = ''
+    
+    const bandInput = document.querySelector('.band-input').value
+    console.log(bandInput)
+    bandInput.value = ''
+    
+let mbidResponse = await axios.get(`http://musicbrainz.org/ws/2/artist/?query=artist:${bandInput}%20AND%20type:group%20AND%20country:US`)
+// console.log(mbidResponse.data)
 
 let mbid = mbidResponse.data.artists[0].id
 console.log(mbid)
 // take result of getBand, pass through getSetlist
 
-// const getSetlist = async (ev) => {
-//     // ev.preventDefault()
+// const getSetlist = async (mbid) => {
+//     // mbid.preventDefault()
 //     appendBand.innerHTML = ''
 
     // let setResponse = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/artist/${mbid}/setlists?p=1`, {
@@ -67,11 +71,8 @@ const getNews = async (ev) => {
      console.log(newsResponse.data)    
 
 let newsLead = newsResponse.data.response.docs[0].lead_paragraph
-// console.log(newsSnippet)
 let newsHeadline = newsResponse.data.response.docs[0].headline.main
-// console.log(newsHeadline)
 let newsUrl = newsResponse.data.response.docs[0].web_url
-// console.log(newsUrl)
 
 let newsDiv = document.createElement('div')
     newsDiv.innerHTML = `
@@ -86,6 +87,6 @@ let newsDiv = document.createElement('div')
 const form = document.querySelector('form')
 form.addEventListener('submit', getBand)
 
-getBand('the ramones')
-// getSetlist()
+getBand()
+// getSetlist(mbid)
 getNews()
