@@ -1,8 +1,6 @@
 const appendBand = document.querySelector('.band-info')
 const appendNews = document.querySelector('.news-info')
 
-
-
 const setlistUrl = 'https://api.setlist.fm/rest/1.0/setlist/'
 const setlistKey = 'dDDQqRHrKqVuXBxZYXZ_DX3fDgaQbPdS6LX8'
 
@@ -41,6 +39,7 @@ const getSetlist = async (band, date) => {
     let setlistState = setResponse.data.setlist[0].venue.city.stateCode
     let setList = setResponse.data.setlist[0].sets.set[0].song
     let setlistCountry = setResponse.data.setlist[0].venue.city.country.name
+    let setlistUrl = setResponse.data.setlist[0].venue.url
 
     // console.log(setList)
     let fullSetList = ''
@@ -56,7 +55,9 @@ const getSetlist = async (band, date) => {
     <p>Date: ${eventDate}</p>
     <p>Band: ${bandName}</p>
     <p>Venue: ${venueName}, ${setlistCity}, ${setlistState}, ${setlistCountry}</p>
-    <p>Set List: ${fullSetList}</p>`
+    <p>Set List: ${fullSetList}</p>
+    
+    `
     
     appendBand.append(bandDiv)
 
@@ -65,7 +66,7 @@ const getSetlist = async (band, date) => {
         // console.log(arr[0])
         // console.log(arr[1])
         // console.log(arr[2])
-        getNews(arr[2], arr[1])
+        getNews(arr[2], arr[1], arr[0])
 }
 
 // const getBand = async (band) => {
@@ -83,21 +84,23 @@ const getSetlist = async (band, date) => {
 //     getSetlist(mbid)
 // }
 
-const getNews = async (year, month) => {
+const getNews = async (year, month, day) => {
     // ev.preventDefault()
     appendNews.innerHTML = ''
 
-    let newsResponse = await axios.get(`https://api.nytimes.com/svc/archive/v1/${year}/${month}.json?api-key=A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn`)
+    let newsResponse = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=world&fq=pub_date:"${year}-${month}-${day}"&api-key=ep9FTX8Z54fyUsBz9zwDaxII8xA6k7ML`)
      console.log(newsResponse.data)    
 
-let newsLead = newsResponse.data.response.docs[0].lead_paragraph
+let newsPara = newsResponse.data.response.docs[0].lead_paragraph
 let newsHeadline = newsResponse.data.response.docs[0].headline.main
 let newsUrl = newsResponse.data.response.docs[0].web_url
+let pubDate = newsResponse.data.response.docs[0].pub_date
 
 let newsDiv = document.createElement('div')
     newsDiv.innerHTML = `
     <p>${newsHeadline}</p>
-    <p>${newsLead}</p>
+    <p>${pubDate}</p>
+    <p>${newsPara}</p>
     <p><a href=${newsUrl}>Read more...</a></p>`
     
     appendNews.append(newsDiv)
