@@ -50,7 +50,13 @@ const getSetlist = async (bandId) => {
     <p>Set List: ${fullSetList}</p>`
     
     appendBand.append(bandDiv)
-    callback()
+
+        // var foo = "09-22-2011";
+        let arr = eventDate.split("-");
+        // console.log(arr[0])
+        // console.log(arr[1])
+        // console.log(arr[2])
+        getNews(arr[2], arr[1])
 }
 
 const getBand = async (band) => {
@@ -64,20 +70,20 @@ const getBand = async (band) => {
     let mbidResponse = await axios.get(`http://musicbrainz.org/ws/2/artist/?query=artist:${bandInput}%20AND%20type:group%20AND%20country:US`)
 
     let mbid = mbidResponse.data.artists[0].id
-    console.log(mbid)
+    // console.log(mbid)
     getSetlist(mbid)
 }
 
-const getNews = async (ev) => {
+const getNews = async (year, month) => {
     // ev.preventDefault()
     appendNews.innerHTML = ''
 
-    let newsResponse = await axios.get('https://api.nytimes.com/svc/archive/v1/1978/3.json?api-key=A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn')
+    let newsResponse = await axios.get(`https://api.nytimes.com/svc/archive/v1/${year}/${month}.json?api-key=A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn`)
      console.log(newsResponse.data)    
 
-let newsLead = newsResponse.data.response.docs[0].lead_paragraph
-let newsHeadline = newsResponse.data.response.docs[0].headline.main
-let newsUrl = newsResponse.data.response.docs[0].web_url
+let newsLead = newsResponse.data.response.docs[5].lead_paragraph
+let newsHeadline = newsResponse.data.response.docs[5].headline.main
+let newsUrl = newsResponse.data.response.docs[5].web_url
 
 let newsDiv = document.createElement('div')
     newsDiv.innerHTML = `
@@ -94,4 +100,4 @@ form.addEventListener('submit', getBand)
 
 // getBand()
 // getSetlist(mbid)
-getNews()
+// getNews()
