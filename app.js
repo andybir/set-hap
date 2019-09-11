@@ -13,11 +13,20 @@ const newsKey = 'A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn'
 
 // take result of getBand, pass through getSetlist
 
-const getSetlist = async (bandId) => {
+const getSetlist = async (band, date) => {
     // mbid.preventDefault()
-    appendBand.innerHTML = ''
+    // appendBand.innerHTML = ''
+    band.preventDefault()
+    // appendBand.innerHTML = ''
+    
+    const bandInput = document.querySelector('.band-input').value
+    const dateInput = document.querySelector('.date-input').value
+    console.log(bandInput)
+    bandInput.value = ''
+    dateInput.value = ''
 
-    let setResponse = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/artist/${bandId}/setlists?p=1`, {
+    let setResponse = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/setlists?artistName=${bandInput}&date=${dateInput}&p=1
+    `, {
         headers: {
             'x-api-key' : 'dDDQqRHrKqVuXBxZYXZ_DX3fDgaQbPdS6LX8'
         }
@@ -59,20 +68,20 @@ const getSetlist = async (bandId) => {
         getNews(arr[2], arr[1])
 }
 
-const getBand = async (band) => {
-    band.preventDefault()
-    appendBand.innerHTML = ''
+// const getBand = async (band) => {
+//     band.preventDefault()
+//     appendBand.innerHTML = ''
     
-    const bandInput = document.querySelector('.band-input').value
-    console.log(bandInput)
-    bandInput.value = ''
+//     const bandInput = document.querySelector('.band-input').value
+//     console.log(bandInput)
+//     bandInput.value = ''
     
-    let mbidResponse = await axios.get(`http://musicbrainz.org/ws/2/artist/?query=artist:${bandInput}%20AND%20type:group%20AND%20country:US`)
+//     let mbidResponse = await axios.get(`http://musicbrainz.org/ws/2/artist/?query=artist:${bandInput}%20AND%20type:group%20AND%20country:US`)
 
-    let mbid = mbidResponse.data.artists[0].id
-    // console.log(mbid)
-    getSetlist(mbid)
-}
+//     let mbid = mbidResponse.data.artists[0].id
+//     // console.log(mbid)
+//     getSetlist(mbid)
+// }
 
 const getNews = async (year, month) => {
     // ev.preventDefault()
@@ -81,9 +90,9 @@ const getNews = async (year, month) => {
     let newsResponse = await axios.get(`https://api.nytimes.com/svc/archive/v1/${year}/${month}.json?api-key=A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn`)
      console.log(newsResponse.data)    
 
-let newsLead = newsResponse.data.response.docs[5].lead_paragraph
-let newsHeadline = newsResponse.data.response.docs[5].headline.main
-let newsUrl = newsResponse.data.response.docs[5].web_url
+let newsLead = newsResponse.data.response.docs[0].lead_paragraph
+let newsHeadline = newsResponse.data.response.docs[0].headline.main
+let newsUrl = newsResponse.data.response.docs[0].web_url
 
 let newsDiv = document.createElement('div')
     newsDiv.innerHTML = `
@@ -96,7 +105,7 @@ let newsDiv = document.createElement('div')
 }
 
 const form = document.querySelector('form')
-form.addEventListener('submit', getBand)
+form.addEventListener('submit', getSetlist)
 
 // getBand()
 // getSetlist(mbid)
