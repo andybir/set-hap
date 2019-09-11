@@ -59,10 +59,10 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| query select required news article data points | H | 4hrs| TI | AT |
-| render article data points to DOM | H | 4hrs| TI | AT |
+| query select required news article data points | H | 4hrs| 1hr | 1hr |
+| render article data points to DOM | H | 4hrs| 1hr | 1hr |
 | query select required setlist data points | H | 4hrs| 1.5hrs | 1.5hrs |
-| render setlist article data to DOM | H | 4hrs| 1.5hrs | 1.5hrs |
+| render setlist data to DOM | H | 4hrs| 1.5hrs | 1.5hrs |
 | connect setlist date to article date | H | 4hrs | TI | AT |
 | build band input, submit button | H | 4hrs| TI | AT |
 | styling | M | 4hrs | TI | AT|
