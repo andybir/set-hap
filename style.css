@@ -8,7 +8,7 @@ body {
     flex-flow: column;
     justify-content: center;
     /* background-color: #c8c2ae*/
-    background-image: linear-gradient(#4A0D67, #9BF3F0, #4A0D67);
+    background-image: linear-gradient(#473198, #9BF3F0, #473198);
     /* background-repeat: no-repeat; */
     background-position: center;
     background-size: cover;
@@ -72,7 +72,10 @@ form {
 }
 
 input {
+    margin: 3px;
     justify-content: center;
+    border-radius: 8px;
+    outline: none;
 }
 
 .results {
@@ -123,7 +126,7 @@ input {
 .band-div {
     padding: 10px;
     /* background-image: url("./images/Marquee_theatre_f8d7c5cd-989c-4674-b0fe-67ddc81245bf.jpg"); */
-    background-image: linear-gradient(red, yellow 20%);
+    background-image: linear-gradient(red, yellow 100px);
     border-radius: 8px;
     background-position: center;
     background-repeat: no-repeat;
@@ -139,7 +142,7 @@ input {
     padding: 10px;
     border-radius: 8px;
     background-image: url("./nyc_skylin_bw.0.jpg");
-    background-image: linear-gradient(red, yellow 20%);
+    background-image: linear-gradient(red, yellow 100px);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -177,7 +180,21 @@ a {
 
 }
 
-@media screen and (max-width: 414px) {
-    form {
-        
-} 
+@media screen and (max-width: 415px) and (min-width: 320px) {
+    .results {
+        display: flex;
+        flex-flow: column;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+    
+    p {
+        font-size: 10px;
+    }
+
+    .band-info, .news-info {
+        width: 90%;
+    }
+}
