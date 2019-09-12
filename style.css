@@ -8,10 +8,10 @@ body {
     flex-flow: column;
     justify-content: center;
     /* background-color: #c8c2ae*/
-    background-image: linear-gradient(#473198, #9BF3F0, #473198);
+    background-image: linear-gradient(#5c4c96, rgb(185, 245, 243), #5c4c96);
     /* background-repeat: no-repeat; */
     background-position: center;
-    background-size: cover;
+    background-size: 50px 130px auto;
     max-height: 100%;
 }
 
@@ -32,7 +32,7 @@ h1 {
 }
 
 .button, .refresh {
-    background-color: #ADFC92;
+    background-color: #D65780;
     border: none;
     border-radius: 8px;
     color: black;
@@ -47,7 +47,7 @@ h1 {
 }
 
 .button:hover, .refresh:hover {
-    background-color: #ADFC92;
+    background-color: #D65780;
     border: none;
     border-radius: 8px;
     color: black;
@@ -72,6 +72,8 @@ form {
 }
 
 input {
+    font-size: 22px;
+    padding: 12px 20px;
     margin: 3px;
     justify-content: center;
     border-radius: 8px;
@@ -93,7 +95,7 @@ input {
 .band-info {
     align-items: flex-start;
     padding: 10px;
-    width: 35%;  
+    width: 50%;  
     /* background-color: rgba(177, 162, 124, 0.632) */
 }
 
@@ -106,7 +108,7 @@ input {
     align-items: flex-start;
     font-family: 'Merriweather', serif;
     padding: 10px;
-    width: 35%;
+    width: 50%;
     /* background-color: rgba(111, 165, 165, 0.639) */
 }
 
@@ -126,7 +128,7 @@ input {
 .band-div {
     padding: 10px;
     /* background-image: url("./images/Marquee_theatre_f8d7c5cd-989c-4674-b0fe-67ddc81245bf.jpg"); */
-    background-image: linear-gradient(red, yellow 100px);
+    background-image: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 255, 0, 0.6) 100px);
     border-radius: 8px;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,7 +144,7 @@ input {
     padding: 10px;
     border-radius: 8px;
     background-image: url("./nyc_skylin_bw.0.jpg");
-    background-image: linear-gradient(red, yellow 100px);
+    background-image: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 255, 0, 0.6) 100px);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -181,6 +183,19 @@ a {
 }
 
 @media screen and (max-width: 415px) and (min-width: 320px) {
+    form {
+        justify-content: center;
+    }
+    input {
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+
+    .button, .refresh {
+        padding: 4px 8px;
+        font-size: 16px;
+    }
+
     .results {
         display: flex;
         flex-flow: column;
@@ -188,11 +203,11 @@ a {
     }
 
     h2 {
-        font-size: 15px;
+        font-size: 25px;
     }
     
     p {
-        font-size: 10px;
+        font-size: 20px;
     }
 
     .band-info, .news-info {
