@@ -1,4 +1,4 @@
-* {
+header, .band-info {
     font-family: 'Mina', sans-serif;
 
 }
@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    background-color: rgb(240, 115, 115)
+    background-color: #c8c2ae
     /* display: grid;
     grid-template-columns: 75% 25%; */
     /* grid-template-rows: 10vw 30vw 10vw; */
@@ -28,6 +28,7 @@ header {
 
 h1 {
     margin-left: 10px;
+    color: #2B4141;
     
     /* justify-content: center; */
 }
@@ -51,22 +52,61 @@ input {
 }
 
 .band-info {
+    align-items: flex-start;
     padding: 10px;
-    width: 35%;
-    background-color: rgba(177, 162, 124, 0.632)
+    width: 35%;  
+    /* background-color: rgba(177, 162, 124, 0.632) */
 }
+
+/* .band-img {
+    width: 35%;
+} */
 
 .news-info {
+    /* color: #34E4EA; */
+    align-items: flex-start;
+    font-family: 'Merriweather', serif;
     padding: 10px;
     width: 35%;
-    background-color: rgba(111, 165, 165, 0.639)
+    /* background-color: rgba(111, 165, 165, 0.639) */
 }
 
-div {
+.band-img, .news-img {
+    
+    -webkit-filter: blur(4px);
+    filter: blur(2px);
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.band-img {
+    
+}
+
+.headline {
+    /* color: #0EB1D2 */
+}
+
+.band-div {
+    background-image: url("./concert_thinkstock_bernard_bodo_3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-flow: column;
     justify-content: center;
     /* font-size: 10px; */
+}
+
+.news-div {
+    background-image: url("./nyc_skylin_bw.0.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 h2 {

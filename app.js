@@ -51,8 +51,9 @@ const getSetlist = async (band, date) => {
     // console.log(fullSetList)
     
     let bandDiv = document.createElement('div')
+    bandDiv.classList.add('band-div')
     bandDiv.innerHTML = `
-    <h2>${bandName}</h2>
+    <h2 class="band-name">${bandName}</h2>
     <p>${eventDate}</p>
     <p>${venueName}, ${setlistCity}, ${setlistState}, ${setlistCountry}</p>
     <p class="set-list">Set List: ${fullSetList}</p>
@@ -95,13 +96,28 @@ let newsPara = newsResponse.data.response.docs[0].lead_paragraph
 let newsHeadline = newsResponse.data.response.docs[0].headline.main
 let newsUrl = newsResponse.data.response.docs[0].web_url
 let pubDate = newsResponse.data.response.docs[0].pub_date
+// let imgPath = newsResponse.data.response.docs[0].multimedia
+// let img = newsResponse.data.response.docs[0].multimedia[0].legacy.xlarge
+// console.log(img)
 
 let newsDiv = document.createElement('div')
+newsDiv.classList.add('news-div')
+    // if (imgPath == true) {
+    // newsDiv.innerHTML = `
+    // <h2 class="headline">${newsHeadline}</h2>
+    // <img src="https://static01.nyt.com/${img}" alt="">
+    // <p>${pubDate}</p>
+    // <p class="para">${newsPara}</p>
+    // <p><a href=${newsUrl}>Read more...</a></p>)`
+        
+    // }  
+    // else (
+    
     newsDiv.innerHTML = `
     <h2 class="headline">${newsHeadline}</h2>
     <p>${pubDate}</p>
     <p class="para">${newsPara}</p>
-    <p><a href=${newsUrl}>Read more...</a></p>`
+    <p><a href=${newsUrl}>Read more...</a></p>`/*)*/
     
     appendNews.append(newsDiv)
 
