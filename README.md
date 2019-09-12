@@ -12,9 +12,9 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Sep 10th| Project Description Wireframes / Priority Matrix / Functional Components / Core Application Structure (HTML, CSS, etc.) Pseudocode | Complete
-|Sep 11th|  all data points selected, rendered to DOM | Incomplete
-|Sep 12th| Initial Clickable Model / styling / media queries | Incomplete
-|Sep 13th| pMVP | Incomplete
+|Sep 11th|  all data points selected, rendered to DOM | Complete
+|Sep 12th| Initial Clickable Model | Complete
+|Sep 13th| styling / pMVP / media queries | Incomplete
 |Sep 14th|  | Incomplete
 |Sep 15th|  | Incomplete
 |Sep 16th| Present | Incomplete
@@ -65,11 +65,11 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | render setlist data to DOM | H | 4hrs| 1.5hrs | 1.5hrs |
 | allow search by mbid | H | 4hrs| 1.5hrs | 1.5hrs |
 | push mbid into setlist api | H | 4hrs| 1.5hrs | 1.5hrs |
-| connect setlist date to article date | H | 4hrs | TI | AT |
+| connect setlist date to article date | H | 4hrs | 1.5hrs | 1.5hrs |
 | build band input, submit button | H | 2hrs| 2hrs | 2hrs |
 | styling | M | 4hrs | TI | AT|
 | add button to generate a random setlist/article | L | 4hrs | TI | AT |
-| query select required news article data points | L | 4hrs| TI | AT |
+
 | Total | H | 36hrs| TI | AT |
 
 

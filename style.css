@@ -4,14 +4,21 @@
 }
 
 body {
-    /* margin: 0; */
-    /* min-width: 100vw; */
     display: flex;
     flex-flow: column;
-    justify-content: center
+    justify-content: center;
+    background-color: rgb(240, 115, 115)
+    /* display: grid;
+    grid-template-columns: 75% 25%; */
+    /* grid-template-rows: 10vw 30vw 10vw; */
+    /* grid-gap: 1em;
+    margin: 0 auto;
+    max-width: 56em;
+    padding: 1em 0; */
 }
 
 header {
+    /* grid-column: 1 / span 2; */
     display: flex;
     flex-flow: wrap;
     justify-content: center;
