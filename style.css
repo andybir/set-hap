@@ -184,6 +184,7 @@ a {
     .results {
         display: flex;
         flex-flow: column;
+        justify-content: center;
     }
 
     h2 {
@@ -195,6 +196,6 @@ a {
     }
 
     .band-info, .news-info {
-        width: 90%;
+        width: 95%;
     }
 }
