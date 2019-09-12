@@ -4,6 +4,8 @@
 }
 
 body {
+    /* margin: 0; */
+    /* min-width: 100vw; */
     display: flex;
     flex-flow: column;
     justify-content: center
@@ -11,6 +13,7 @@ body {
 
 header {
     display: flex;
+    flex-flow: wrap;
     justify-content: center;
     order: 1;
     
@@ -23,8 +26,13 @@ h1 {
 }
 
 form {
-    /* justify-content: center; */
+    display: flex;
+    justify-content: center;
     order: 2;
+}
+
+input {
+    justify-content: center;
 }
 
 .results {
@@ -37,23 +45,31 @@ form {
 
 .band-info {
     padding: 10px;
-    width: 50%;
+    width: 35%;
+    background-color: rgba(177, 162, 124, 0.632)
 }
 
 .news-info {
     padding: 10px;
-    width: 50%;
+    width: 35%;
+    background-color: rgba(111, 165, 165, 0.639)
 }
 
 div {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    /* font-size: 10px; */
+}
+
+h2 {
+    font-size: 30px;
 }
 
 p {
     margin-top: 8px;
     margin-bottom: 8px;
+    font-size: 20px;
 }
 
 .set-list {
@@ -72,3 +88,17 @@ p {
 .para {
 
 }
+
+@media screen and (max-width: 414px) {
+    form {
+        justify-content: space-around; 
+        padding: 1px;
+    }
+    input {
+        justify-content: center;
+    }
+
+    div {
+        font-size: 2em;
+    }
+} 
