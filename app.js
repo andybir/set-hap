@@ -12,10 +12,7 @@ const newsKey = 'A8OOI1G1GPxPXG8m1E5jr6ghDhGogFGn'
 // take result of getBand, pass through getSetlist
 
 const getSetlist = async (band, date) => {
-    // mbid.preventDefault()
-    // appendBand.innerHTML = ''
     band.preventDefault()
-    // appendBand.innerHTML = ''
     
     const bandInput = document.querySelector('.band-input').value
     const dateInput = document.querySelector('.date-input').value
@@ -41,14 +38,11 @@ const getSetlist = async (band, date) => {
     let setlistCountry = setResponse.data.setlist[0].venue.city.country.name
     let setlistUrl = setResponse.data.setlist[0].venue.url
 
-    // console.log(setList)
     let fullSetList = ''
 
     setList.forEach(song => {
         fullSetList+=`<p class='song'>${song.name}</p> `
     })
-//create if statement or 
-    // console.log(fullSetList)
     
     let bandDiv = document.createElement('div')
     bandDiv.classList.add('band-div')
@@ -62,11 +56,7 @@ const getSetlist = async (band, date) => {
     
     appendBand.append(bandDiv)
 
-        // var foo = "09-22-2011";
         let arr = eventDate.split("-");
-        // console.log(arr[0])
-        // console.log(arr[1])
-        // console.log(arr[2])
         getNews(arr[2], arr[1], arr[0])
 }
 

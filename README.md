@@ -1,5 +1,6 @@
 # SetHap
 What happened this day in your favorite band's setlist history?
+https://pages.git.generalassemb.ly/andyb/SetHap/
 
 # Project Overview
 
@@ -75,13 +76,15 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
-
+In this snippet I took the date from the setlist results, changed the order (MM-DD-YYYY to DD-MM-YYYY), separated them by a dash (-) and pushed them into the date queries in the NYT API.
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+let arr = eventDate.split("-");
+        getNews(arr[2], arr[1], arr[0])
+
+let newsResponse = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=world&fq=pub_date:"${year}-${month}-${day}"&api-key=ep9FTX8Z54fyUsBz9zwDaxII8xA6k7ML`)
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ Use this section to document what changes were made and the reasoning behind those changes. 
+ 
+  
