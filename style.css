@@ -32,7 +32,7 @@ h1 {
 }
 
 .button, .refresh {
-    background-color: #D65780;
+    background-color: rgba(255, 0, 0, 0.6);
     border: none;
     border-radius: 8px;
     color: black;
@@ -42,12 +42,12 @@ h1 {
     display: inline-block;
     font-size: 12px;
     cursor: pointer;
-  -webkit-transition-duration: 0.4s; 
-  transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
 }
 
 .button:hover, .refresh:hover {
-    background-color: #D65780;
+    background-color: rgba(255, 0, 0, 0.6);
     border: none;
     border-radius: 8px;
     color: black;
@@ -86,10 +86,6 @@ input {
     justify-content: center;
     padding: 10px;
     order: 3;
-}
-
-.band-name {
-    
 }
 
 .band-info {
