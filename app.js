@@ -107,7 +107,7 @@ newsDiv.classList.add('news-div')
     <h2 class="headline">${newsHeadline}</h2>
     <p>${pubDate}</p>
     <p class="para">${newsPara}</p>
-    <p><a href=${newsUrl}>Read more...</a></p>`/*)*/
+    <p><a href=${newsUrl} target="_blank">Read more...</a></p>`/*)*/
     
     appendNews.append(newsDiv)
 
